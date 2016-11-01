@@ -43,12 +43,12 @@ angular.module('starter.controllers')
     };
     
     $scope.colours = [{
-       fillColor: "rgba(151,187,205,0.2)",
-       strokeColor: "rgba(15,187,25,1)",
-       pointColor: "rgba(15,187,25,1)",
+       fillColor: "rgba(53,114,122,0.2)",
+       strokeColor: "rgba(50,119,229,1)",
+       pointColor: "rgba(50,119,229,1)",
        pointStrokeColor: "#fff",
        pointHighlightFill: "#fff",
-       pointHighlightStroke: "rgba(151,187,205,0.8)"
+       pointHighlightStroke: "rgba(53,114,122,0.8)"
 }];
     $scope.shouldShowButton = TKResultsButtonService.getShouldShowMenuButton();
     
