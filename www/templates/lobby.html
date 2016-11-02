@@ -1,10 +1,15 @@
 <ion-view view-title="Menu">
     <ion-content class="padding: 20px">
+    <!--    <ion-nav-buttons side="right">-->
+    <!--</ion-nav-buttons>-->
         <button class="ptor-lobby-go-question button button-outline button-full button-positive icon ion-compose" ng-click=goToTest()>
          Take Test
         </button>
         <button class="button button-outline button-full button-positive icon ion-ios-box-outline" ui-sref="history">
         My Results
+        </button>
+        <button class="button button-outline button-full button-positive" ng-click="logout()">
+        Logout
         </button>
     </ion-content>
 </ion-view>
