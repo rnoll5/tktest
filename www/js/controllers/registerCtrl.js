@@ -11,7 +11,7 @@ angular.module('starter.controllers')
   .then(function(response) {
      // handle different responses and decide what happens next
      $window.localStorage.token=response.data.token; 
-     $window.localStorage.userID=response.data.id; 
+     $window.localStorage.userID=response.data.ID; 
      
      if (response.data === null) {
        return alert("user is offline");

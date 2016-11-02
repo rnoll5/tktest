@@ -18,14 +18,13 @@ SSFUsersRest.post = function(newUserData) {
     });
  };
  
- SSFUsersRest.logout = function(newUserData) {
+ SSFUsersRest.logout = function(token) {
  return $http({
-   url: "https://strongloop-backend-rnoll.c9users.io:8080/api/SSFUsers/logout",
-   method: "POST",
    headers: {
    Authorization: token  
    },
-   
+   url: "https://strongloop-backend-rnoll.c9users.io:8080/api/SSFUsers/logout",
+   method: "POST",
     });
  };   
     
