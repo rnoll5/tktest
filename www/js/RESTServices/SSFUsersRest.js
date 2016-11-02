@@ -9,4 +9,12 @@ SSFUsersRest.post = function(newUserData) {
    data: newUserData
     });
  };
+ 
+ SSFUsersRest.login = function(newUserData) {
+ return $http({
+   url: "https://strongloop-backend-rnoll.c9users.io:8080/api/SSFUsers/login",
+   method: "POST",
+   data: newUserData
+    });
+ };
 });

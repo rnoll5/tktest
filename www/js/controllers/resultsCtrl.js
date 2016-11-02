@@ -43,7 +43,7 @@ angular.module('starter.controllers')
     };
     
     $scope.colours = [{
-       fillColor: "rgba(53,114,122,0.2)",
+       fillColor: "rgba(73,7,140,0.2)",
        strokeColor: "rgba(50,119,229,1)",
        pointColor: "rgba(50,119,229,1)",
        pointStrokeColor: "#fff",

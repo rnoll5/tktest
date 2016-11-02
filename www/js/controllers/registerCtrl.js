@@ -27,6 +27,8 @@ angular.module('starter.controllers')
       return alert("email is already taken");
      } else if (error.status ===500) {
        return alert("server is offline");
+     } else {
+         alert("failed");
      }
     });
   };
