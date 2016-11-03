@@ -12,7 +12,7 @@ function($scope, $stateParams, testInfo, TKAnswersService, $state, $ionicHistory
 
 $scope.buttonClicked = function (answersDict) {
         var category = $scope["question" + answersDict].Style;
-        TKAnswersService.saveAnswer(answersDict);
+        TKAnswersService.saveAnswer(category);
        
         if($scope.qNumber == 30) {
            performRequest();

@@ -15,9 +15,14 @@ TKTestQuestionService.all();
   $state.go('history');
   };
    
- $scope.logout = function () {
-  SSFUsersRest.logout($window.localStorage.token);
-  $state.go('landing');
- };
- 
-}]);
+ $scope.logout = function() {
+  SSFUsersRest.logout($window.localStorage.token)
+   .then(function(response) {
+    if (response.status == 204) {
+     $state.go('landing');
+    } else {
+     alert("error: still logged in");
+    }
+   });
+ }
+ }]);

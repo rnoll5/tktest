@@ -33,30 +33,28 @@ angular.module('TKTestAnswers',[])
     };
    
     service.saveTest = function(test) {
-        test.userID=$window.localStorage.userID;
+        test.userID = $window.localStorage.userID;
         // var tempTests = $window.localStorage.tests === undefined ? [] : JSON.parse($window.localStorage.tests);
         // tempTests.push(test);
         // $window.localStorage.tests = JSON.stringify(tempTests);
         TestResultsRest.save(test, $window.localStorage["token"])
-        .then(function(response) {
-            if (response.status == 200) {
-            } else {
-            alert("test did not save")
-            }
-            })
+            .then(function(response) {
+                if (response.status == 200) {}
+                else {
+                    alert("error: test did not save");
+                }
+            });
     };
     
-    service.getTests = function(tests) {
-        
-        // TestResultsRest.getAll($window.localStorage["token"])//$window.localStorage.token
-        //         var results = [];
-        // // tests.forEach(function(tests){
-        // //     //Search for tests with the specified token
-        // //     if(tests.Test_Number == token)
-        // //         results.push(tests);
-        // // });
-        // // return results    
-        
+    service.getTests = function() {
+            return TestResultsRest.getAll($window.localStorage["token"]) //$window.localStorage.token
+                .then(function(response) {
+                        if (response.status == 200) {
+                            return response.data; 
+                        } else {
+                            alert("error: test results did not load");
+                        }
+                });    
     };
    
     service.setAnswers = function(answers)

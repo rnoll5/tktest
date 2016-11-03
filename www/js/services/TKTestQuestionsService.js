@@ -9,8 +9,7 @@ angular.module('TKTestQuestions', [])
             if(response.status == 200)
             {
                 questions = response.data;
-                $window.localStorage.token=response.data.token; 
-                $window.localStorage.userID=response.data.ID;
+
             }
         });
     };
