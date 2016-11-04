@@ -20,6 +20,8 @@ TKTestQuestionService.all();
    $ionicHistory.nextViewOptions({
    historyRoot: true
   });
+   $window.localStorage.clear();
    $state.go('landing');
    };
+   
  }]);
