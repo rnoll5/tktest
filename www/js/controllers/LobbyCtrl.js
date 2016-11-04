@@ -1,7 +1,7 @@
 angular.module('starter.controllers')
-.controller('LobbyCtrl',['$scope', 'TKTestQuestionService', '$state', 'TKAnswersService', '$window', 'SSFUsersRest',
+.controller('LobbyCtrl',['$scope', 'TKTestQuestionService', '$state', 'TKAnswersService', '$window', 'SSFUsersRest', '$ionicHistory',
 
-function($scope, TKTestQuestionService, $state, TKAnswersService, $window, SSFUsersRest) {
+function($scope, TKTestQuestionService, $state, TKAnswersService, $window, SSFUsersRest, $ionicHistory) {
 TKTestQuestionService.all();
 
  $scope.goToTest = function()
@@ -16,13 +16,10 @@ TKTestQuestionService.all();
   };
    
  $scope.logout = function() {
-  SSFUsersRest.logout($window.localStorage.token)
-   .then(function(response) {
-    if (response.status == 204) {
-     $state.go('landing');
-    } else {
-     $state.go('landing');
-    }
-   });
- }
+  SSFUsersRest.logout($window.localStorage.token);
+   $ionicHistory.nextViewOptions({
+   historyRoot: true
+  });
+   $state.go('landing');
+   };
  }]);
