@@ -8,7 +8,7 @@ angular.module("RESTServices")
             $window.localStorage[token];
             return $http({
                 headers: {
-                    Authorization: token
+                    authorization: token
                 },
                 url: "https://strongloop-backend-rnoll.c9users.io/api/Questions",
                 method: "GET",

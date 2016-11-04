@@ -1,6 +1,6 @@
 angular.module('TKTestAnswers',[])
-.service('TKAnswersService',['$window', 'TestResultsRest',
-    function ($window, TestResultsRest) {
+.service('TKAnswersService',['$window', 'TestResultsRest', '$state',
+    function ($window, TestResultsRest, $state) {
     var service = this;
     var answerCategories = {
         "competing": 0,
@@ -42,6 +42,7 @@ angular.module('TKTestAnswers',[])
                 if (response.status == 200) {}
                 else {
                     alert("error: test did not save");
+                    $state.go('lobby');
                 }
             });
     };
@@ -53,6 +54,7 @@ angular.module('TKTestAnswers',[])
                             return response.data; 
                         } else {
                             alert("error: test results did not load");
+                            $state.go('lobby');
                         }
                 });    
     };

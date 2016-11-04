@@ -21,7 +21,7 @@ TKTestQuestionService.all();
     if (response.status == 204) {
      $state.go('landing');
     } else {
-     alert("error: still logged in");
+     $state.go('landing');
     }
    });
  }

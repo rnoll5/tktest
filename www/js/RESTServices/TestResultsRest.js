@@ -7,17 +7,16 @@ angular.module("RESTServices")
            method: 'POST',
            data: test,
            headers:{
-                 Authorization: token
+                 authorization: token
             }
        });
    };
     TestResultsRest.getAll = function(token) {
        return $http({
            headers:{
-                 Authorization: token
+                 authorization: token
             },
-           url: "https://strongloop-backend-rnoll.c9users.io/api/TestResults",
-           /*?filter=[id]*/
+           url: "https://strongloop-backend-rnoll.c9users.io/api/TestResults?filter[where][userID]=" + $window.localStorage.userID,
            method: 'GET',
        });
     };

@@ -21,7 +21,7 @@ SSFUsersRest.post = function(newUserData) {
  SSFUsersRest.logout = function(token) {
  return $http({
    headers: {
-   Authorization: token  
+   authorization: token  
    },
    url: "https://strongloop-backend-rnoll.c9users.io:8080/api/SSFUsers/logout",
    method: "POST",
