@@ -11,12 +11,12 @@ angular.module("RESTServices")
             }
        });
    };
-    TestResultsRest.getAll = function(token) {
+    TestResultsRest.getAll = function(token, userID) {
        return $http({
            headers:{
                  authorization: token
             },
-           url: "https://strongloop-backend-rnoll.c9users.io/api/TestResults?filter[where][userID]=" + $window.localStorage.userID,
+           url: "https://strongloop-backend-rnoll.c9users.io/api/TestResults?filter[where][userID]=" + userID,
            method: 'GET',
        });
     };

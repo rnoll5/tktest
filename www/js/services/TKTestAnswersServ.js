@@ -48,7 +48,7 @@ angular.module('TKTestAnswers',[])
     };
     
     service.getTests = function() {
-            return TestResultsRest.getAll($window.localStorage["token"]) //$window.localStorage.token
+            return TestResultsRest.getAll($window.localStorage["token"], $window.localStorage.userID) //$window.localStorage.token
                 .then(function(response) {
                         if (response.status == 200) {
                             return response.data; 
